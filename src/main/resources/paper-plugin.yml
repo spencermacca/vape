@@ -1,0 +1,7 @@
+name: Vape
+version: '1.0'
+main: co.spencermedia.vape.Vape
+api-version: '1.21'
+authors: [ smmacca ]
+description: Adds a vape as a craftable item into the game
+website: spencermedia.co
