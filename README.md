@@ -1,5 +1,6 @@
 # Vape
-Vape is a Minecraft plugin which adds a craftable IGET Bar to the game
+Vape is a Minecraft plugin which adds a craftable IGET Bar to the game. 
+When right clicked, you will get nausea and slowness for 10 seconds
 
 ## Recipe:
 ![Crafting Recipe](https://i.imgur.com/drs1vnG.png)
