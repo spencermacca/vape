@@ -23,9 +23,11 @@ public final class Vape extends JavaPlugin implements Listener {
         // Plugin startup logic
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
         createGrapeIceRecipe();
-        createStrawberryRecipe();
-        createMintRecipe();
-        createMangoRecipe();
+        createMangoIceRecipe();
+        createBlueberryIceRecipe();
+        createStrawberryKiwiIceRecipe();
+        createWatermelonMintIceRecipe();
+        createIceCreamRecipe();
     }
 
     @Override
@@ -34,84 +36,91 @@ public final class Vape extends JavaPlugin implements Listener {
     }
 
     private void createGrapeIceRecipe() {
-        // Create the Grape Ice IGET Bar item
         ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
         ItemMeta meta = igetBar.getItemMeta();
-        meta.setDisplayName(ChatColor.LIGHT_PURPLE + "IGET Bar");
-        meta.setLore(List.of(ChatColor.DARK_PURPLE + "Grape Ice Flavor"));
+        meta.setDisplayName(ChatColor.DARK_PURPLE + "IGET Bar");
+        meta.setLore(List.of(ChatColor.DARK_PURPLE + "Grape Ice"));
         igetBar.setItemMeta(meta);
-
-        // Define the crafting recipe
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_grape"), igetBar);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_grape_ice"), igetBar);
         recipe.shape(" I ", "RNR", " R ");
         recipe.setIngredient('I', Material.IRON_INGOT);
         recipe.setIngredient('R', Material.REDSTONE);
         recipe.setIngredient('N', Material.SWEET_BERRIES);
-
-        // Add the recipe to the server
         Bukkit.addRecipe(recipe);
     }
 
-    private void createStrawberryRecipe() {
-        // Create the Strawberry IGET Bar item
+    private void createMangoIceRecipe() {
         ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
         ItemMeta meta = igetBar.getItemMeta();
-        meta.setDisplayName(ChatColor.RED + "IGET Bar");
-        meta.setLore(List.of(ChatColor.DARK_RED + "Strawberry Flavor"));
+        meta.setDisplayName(ChatColor.YELLOW + "IGET Bar");
+        meta.setLore(List.of(ChatColor.YELLOW + "Mango Ice"));
         igetBar.setItemMeta(meta);
-
-        // Define the crafting recipe
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_strawberry"), igetBar);
-        recipe.shape(" I ", "RNR", " R ");
-        recipe.setIngredient('I', Material.IRON_INGOT);
-        recipe.setIngredient('R', Material.REDSTONE);
-        recipe.setIngredient('N', Material.APPLE);
-
-        // Add the recipe to the server
-        Bukkit.addRecipe(recipe);
-    }
-
-    private void createMintRecipe() {
-        // Create the Mint IGET Bar item
-        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
-        ItemMeta meta = igetBar.getItemMeta();
-        meta.setDisplayName(ChatColor.GREEN + "IGET Bar");
-        meta.setLore(List.of(ChatColor.DARK_GREEN + "Mint Flavor"));
-        igetBar.setItemMeta(meta);
-
-        // Define the crafting recipe
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_mint"), igetBar);
-        recipe.shape(" I ", "RNR", " R ");
-        recipe.setIngredient('I', Material.IRON_INGOT);
-        recipe.setIngredient('R', Material.REDSTONE);
-        recipe.setIngredient('N', Material.KELP);
-
-        // Add the recipe to the server
-        Bukkit.addRecipe(recipe);
-    }
-
-    private void createMangoRecipe() {
-        // Create the Mango IGET Bar item
-        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
-        ItemMeta meta = igetBar.getItemMeta();
-        meta.setDisplayName(ChatColor.GOLD + "IGET Bar");
-        meta.setLore(List.of(ChatColor.YELLOW + "Mango Flavor"));
-        igetBar.setItemMeta(meta);
-
-        // Define the crafting recipe
-        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_mango"), igetBar);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_mango_ice"), igetBar);
         recipe.shape(" I ", "RNR", " R ");
         recipe.setIngredient('I', Material.IRON_INGOT);
         recipe.setIngredient('R', Material.REDSTONE);
         recipe.setIngredient('N', Material.GLOW_BERRIES);
+        Bukkit.addRecipe(recipe);
+    }
 
-        // Add the recipe to the server
+    private void createBlueberryIceRecipe() {
+        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
+        ItemMeta meta = igetBar.getItemMeta();
+        meta.setDisplayName(ChatColor.BLUE + "IGET Bar");
+        meta.setLore(List.of(ChatColor.BLUE + "Blueberry Ice"));
+        igetBar.setItemMeta(meta);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_blueberry_ice"), igetBar);
+        recipe.shape(" I ", "RNR", " R ");
+        recipe.setIngredient('I', Material.IRON_INGOT);
+        recipe.setIngredient('R', Material.REDSTONE);
+        recipe.setIngredient('N', Material.BLUE_ORCHID);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private void createStrawberryKiwiIceRecipe() {
+        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
+        ItemMeta meta = igetBar.getItemMeta();
+        meta.setDisplayName(ChatColor.RED + "IGET Bar");
+        meta.setLore(List.of(ChatColor.RED + "Strawberry Kiwi Ice"));
+        igetBar.setItemMeta(meta);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_strawberry_kiwi_ice"), igetBar);
+        recipe.shape(" I ", "RNR", " R ");
+        recipe.setIngredient('I', Material.IRON_INGOT);
+        recipe.setIngredient('R', Material.REDSTONE);
+        recipe.setIngredient('N', Material.BEETROOT);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private void createWatermelonMintIceRecipe() {
+        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
+        ItemMeta meta = igetBar.getItemMeta();
+        meta.setDisplayName(ChatColor.AQUA + "IGET Bar");
+        meta.setLore(List.of(ChatColor.AQUA + "Watermelon Mint Ice"));
+        igetBar.setItemMeta(meta);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_watermelon_mint_ice"), igetBar);
+        recipe.shape(" I ", "RNR", " R ");
+        recipe.setIngredient('I', Material.IRON_INGOT);
+        recipe.setIngredient('R', Material.REDSTONE);
+        recipe.setIngredient('N', Material.SEA_PICKLE);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private void createIceCreamRecipe() {
+        ItemStack igetBar = new ItemStack(Material.AMETHYST_SHARD);
+        ItemMeta meta = igetBar.getItemMeta();
+        meta.setDisplayName(ChatColor.WHITE + "IGET Bar");
+        meta.setLore(List.of(ChatColor.WHITE + "Ice Cream"));
+        igetBar.setItemMeta(meta);
+        ShapedRecipe recipe = new ShapedRecipe(new NamespacedKey(this, "iget_bar_ice_cream"), igetBar);
+        recipe.shape(" I ", "RNR", " R ");
+        recipe.setIngredient('I', Material.IRON_INGOT);
+        recipe.setIngredient('R', Material.REDSTONE);
+        recipe.setIngredient('N', Material.SUGAR);
         Bukkit.addRecipe(recipe);
     }
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
-        // Check if the player right-clicked with an IGET Bar
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             ItemStack item = event.getItem();
 
@@ -120,26 +129,29 @@ public final class Vape extends JavaPlugin implements Listener {
                 if (meta.hasLore() && !meta.getLore().isEmpty()) {
                     String lore = meta.getLore().get(0);
                     
-                    // Apply effects based on flavor
-                    if (lore.equals(ChatColor.DARK_PURPLE + "Grape Ice Flavor")) {
-                        // Nausea and Slowness for Grape Ice
+                    if (lore.equals(ChatColor.DARK_PURPLE + "Grape Ice")) {
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 200, 1));
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 200, 1));
                         event.setCancelled(true);
-                    } else if (lore.equals(ChatColor.DARK_RED + "Strawberry Flavor")) {
-                        // Speed and Jump Boost for Strawberry
+                    } else if (lore.equals(ChatColor.YELLOW + "Mango Ice")) {
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 200, 1));
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 200, 1));
+                        event.setCancelled(true);
+                    } else if (lore.equals(ChatColor.BLUE + "Blueberry Ice")) {
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, 200, 1));
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.DOLPHINS_GRACE, 200, 1));
+                        event.setCancelled(true);
+                    } else if (lore.equals(ChatColor.RED + "Strawberry Kiwi Ice")) {
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 1));
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 200, 1));
                         event.setCancelled(true);
-                    } else if (lore.equals(ChatColor.DARK_GREEN + "Mint Flavor")) {
-                        // Regeneration and Resistance for Mint
+                    } else if (lore.equals(ChatColor.AQUA + "Watermelon Mint Ice")) {
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 200, 1));
                         event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 200, 1));
                         event.setCancelled(true);
-                    } else if (lore.equals(ChatColor.YELLOW + "Mango Flavor")) {
-                        // Haste and Night Vision for Mango
-                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 200, 1));
-                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 200, 1));
+                    } else if (lore.equals(ChatColor.WHITE + "Ice Cream")) {
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 200, 1));
+                        event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 200, 1));
                         event.setCancelled(true);
                     }
                 }
